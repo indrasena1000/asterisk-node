@@ -1,0 +1,5 @@
+Note : User must be in his root terminal to access asterisk config files
+
+## changes to be made in sip.conf file
+ file location : etc/asterisk/sip.conf
+ 
