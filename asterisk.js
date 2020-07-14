@@ -47,11 +47,11 @@ fs.appendFile('/etc/asterisk/voicemail.conf',voicemail,(err)=>{
     }
 });
 
-cmd.run(['asterisk -rx "dialplan reload"','asterisk -rx "sip reload"'])
+cmd.run(['asterisk -rx "dialplan reload"','asterisk -rx "sip reload"','asterisk -rx "voicemail reload"'])
 
 }
 async function Initialize(){
-   await cmd.run(['rm -r /etc/asterisk/sip.conf','rm -r /etc/asterisk/extensions.conf','rm -r /etc/asterisk/voicemail.conf','touch /etc/asterisk/sip.conf','touch /etc/asterisk/extensions.conf','touch /etc/asterisk/voicemail.conf','asterisk -rx "dialplan reload"','asterisk -rx "sip reload"'])
+   await cmd.run(['rm -r /etc/asterisk/sip.conf','rm -r /etc/asterisk/extensions.conf','rm -r /etc/asterisk/voicemail.conf','touch /etc/asterisk/sip.conf','touch /etc/asterisk/extensions.conf','touch /etc/asterisk/voicemail.conf','asterisk -rx "dialplan reload"','asterisk -rx "sip reload"','asterisk -rx "voicemail reload"'])
     const sip=`[general]
 context=internal
 allowguest=no
